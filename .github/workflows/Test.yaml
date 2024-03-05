@@ -11,7 +11,7 @@ jobs:
     steps:
       # Чекаутим код
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Navigate
         run: cd ./server_user
       - name: Install requirements
