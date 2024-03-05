@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "mocha --exit tests/*.spec.js"
+    "test": "node preRun.js && mocha --exit tests/*.spec.js"
   },
   "author": "",
   "license": "ISC",
