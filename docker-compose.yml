@@ -1,0 +1,37 @@
+version: "3"
+services:
+  postgres:
+    build: ./postgres
+    container_name: postgres-db-container
+    image: postgres-db
+    ports:
+      - 4321:5432
+    networks:
+      - server-network
+  server-user:
+    build: ./server_user
+    container_name: server-user-container
+    image: server-user
+    ports:
+      - 3000:3000
+    networks:
+      - server-network
+  server-project:
+    build: ./server_project
+    container_name: server-project-container
+    image: server-project
+    ports:
+      - 3001:3001
+    networks:
+      - server-network
+  nginx:
+    build: ./nginx
+    container_name: nginx-server-container
+    image: nginx-server
+    ports:
+      - 80:80
+    networks:
+      - server-network
+networks:
+  server-network:
+    driver: bridge
