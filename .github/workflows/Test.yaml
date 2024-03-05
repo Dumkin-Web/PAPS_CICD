@@ -15,6 +15,6 @@ jobs:
       - name: Navigate
         run: cd ./server_user
       - name: Install requirements
-        run: npm i
+        run: ./server_user npm i
       - name: Run tests
         run: npm run test
