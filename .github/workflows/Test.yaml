@@ -12,9 +12,11 @@ jobs:
       # Чекаутим код
       - name: Checkout
         uses: actions/checkout@main
-      - name: Navigate
-        run: cd server_user
       - name: Install requirements
-        run: npm i
+        run: |
+          cd server_user
+          npm i
       - name: Run tests
-        run: npm run test
+        run: |
+          cd server_user
+          npm run test
