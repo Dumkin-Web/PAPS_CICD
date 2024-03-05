@@ -12,6 +12,11 @@ jobs:
       # Чекаутим код
       - name: Checkout
         uses: actions/checkout@main
+      - name: Build docker
+        run: |
+          cd postgres
+          docker build . -t postgres-db
+          docker run --name postgres-db-container --network server-network -p 5432:5432 -d postgres-db
       - name: Install requirements
         run: |
           cd server_user
