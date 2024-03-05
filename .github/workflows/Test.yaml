@@ -13,8 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: Navigate
-        run: cd ./server_user
+        run: cd server_user
       - name: Install requirements
-        run: ./server_user npm i
+        run: npm i
       - name: Run tests
         run: npm run test
