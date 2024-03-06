@@ -6,6 +6,25 @@ on:
     branches:
       - '*'
 jobs:
+  Project-service-tests:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      # Чекаутим код
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Build docker
+        run: |
+          cd postgres
+          docker build . -t postgres-db
+          docker run --name postgres-db-container -p 5432:5432 -d postgres-db
+      - name: Install requirements
+        run: |
+          cd server_project
+          npm i
+      - name: Run tests
+        run: |
+          cd server_project
+          npm run test
   User-service-tests:
     runs-on: [ubuntu-latest]
     steps:

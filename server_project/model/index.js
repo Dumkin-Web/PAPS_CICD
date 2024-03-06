@@ -25,6 +25,7 @@ Project.belongsToMany(User, {through: UserProjects})
 
 //EXPORTS//
 module.exports = {
+    User,
     Project,
     UserProjects,
 }
