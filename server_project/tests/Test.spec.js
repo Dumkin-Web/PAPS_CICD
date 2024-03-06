@@ -1,3 +1,4 @@
+require('dotenv').config()
 const {app} = require('../index')
 const {User} = require('../model/index')
 const sequelize = require('../model/db')
