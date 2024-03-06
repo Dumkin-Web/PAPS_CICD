@@ -1,11 +1,10 @@
-require('dotenv').config()
 const {app} = require('../index')
 const {User} = require('../model/index')
 const sequelize = require('../model/db')
 const request = require('supertest')(app);
 const {expect} = require('chai')
 const {v4: uuidv4} = require('uuid')
-const {decode, sign} = require('jsonwebtoken')
+const { sign} = require('jsonwebtoken')
 
 let projectId = '';
 let jwtToken = '';
